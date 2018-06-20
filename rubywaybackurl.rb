@@ -16,7 +16,7 @@ puts
 print "Enter domain name: "
 domains = gets.chomp
 
-waybackData = open("https://web.archive.org/cdx/search?url=*.#{domains}/*&matchType=prefix&collapse=urlkey&output=json&fl=original").read
+waybackData = open("https://web.archive.org/cdx/search?url=#{domains}&matchType=prefix&collapse=urlkey&output=json&fl=original").read
 
 savedFile = open("#{domains}.json", "w")
 savedFile.write(waybackData)
